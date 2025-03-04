@@ -52,13 +52,16 @@ You can run the script to process either a single file or an entire directory.
 
 ```bash
 python your_script_name.py --file path/to/your/file.xlsx
+```
 
 **2. Processing a directory:**
 
 ```bash
 python your_script_name.py --file path/to/your-directory/
+```
 
 **3. Processing a directory and create report:**
 
 ```bash
 python your_script_name.py --file path/to/your-directory/ --report "path/report.md"
+```
