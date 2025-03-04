@@ -21,8 +21,8 @@ This script is designed to clean and standardize financial data from various fil
 1.  **Clone the repository:**
 
     ```bash
-    git clone <repository_url>
-    cd <repository_directory>
+    git clone https://github.com/grungert/Financial-Data-Cleaner.git
+    cd Financial-Data-Cleaner
     ```
 
 2.  **Install required dependencies:**
