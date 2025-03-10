@@ -1,0 +1,96 @@
+=====================================================
+FINANCIAL DATA CLEANER - INSTALLATION INSTRUCTIONS
+=====================================================
+
+These instructions will guide you through setting up the Financial Data Cleaner package
+on different operating systems.
+
+PREREQUISITES:
+-------------
+- Python 3.7 or higher
+- pip (Python package manager)
+
+=====================================================
+INSTALLATION STEPS:
+=====================================================
+
+1. CLONE THE REPOSITORY
+-----------------------
+
+   git clone https://github.com/grungert/Financial-Data-Cleaner.git
+   cd Financial-Data-Cleaner
+
+
+2. SET UP A VIRTUAL ENVIRONMENT (RECOMMENDED)
+--------------------------------------------
+
+   # For Windows:
+   python -m venv venv
+   venv\Scripts\activate
+
+   # For macOS and Linux:
+   python3 -m venv venv
+   source venv/bin/activate
+
+
+3. INSTALL DEPENDENCIES
+----------------------
+
+   # Basic installation with only required dependencies:
+   pip install pandas chardet
+
+   # Full installation with all features:
+   pip install pandas chardet openpyxl xlrd fuzzywuzzy python-Levenshtein tqdm
+
+   # If you encounter issues with python-Levenshtein installation:
+   # On Windows, you might need Microsoft C++ Build Tools
+   # On macOS, you might need Command Line Tools (run: xcode-select --install)
+   # On Linux, you might need python3-dev and build-essential packages
+
+
+4. VERIFY INSTALLATION
+---------------------
+
+   # Test that everything is working correctly by processing a sample file:
+   python -m financial_data_cleaner.main path/to/your/test/file.xlsx -o test_output
+
+
+=====================================================
+DEPENDENCY DETAILS:
+=====================================================
+
+REQUIRED DEPENDENCIES:
+---------------------
+- pandas:  Data manipulation library
+- chardet: Character encoding detection
+
+OPTIONAL DEPENDENCIES:
+---------------------
+- xlrd:              For reading .xls files
+- openpyxl:          For reading .xlsx files
+- fuzzywuzzy:        For fuzzy matching of column names
+- python-Levenshtein: For improved performance of fuzzywuzzy
+- tqdm:              For progress bars during processing
+
+=====================================================
+TROUBLESHOOTING:
+=====================================================
+
+1. "ImportError: No module named pandas"
+   - Run: pip install pandas
+   - Verify your virtual environment is activated
+
+2. "ModuleNotFoundError: No module named 'chardet'"
+   - Run: pip install chardet
+
+3. "AttributeError: module 'pandas' has no attribute 'read_excel'"
+   - Install Excel file support: pip install xlrd openpyxl
+
+4. Slow column matching performance
+   - Install the recommended packages for fuzzy matching:
+     pip install fuzzywuzzy python-Levenshtein
+
+5. Python-Levenshtein installation issues
+   - On Windows: Install Microsoft Visual C++ Build Tools
+   - On macOS: Run "xcode-select --install" in Terminal
+   - On Linux: Run "sudo apt-get install python3-dev build-essential"
